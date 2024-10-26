@@ -56,7 +56,10 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans]
-			}
+			},
+			screens: {
+                'mobile': '0px'
+            }
 		}
 	},
 };

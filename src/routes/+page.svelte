@@ -34,24 +34,24 @@
   <Progress
     {value}
     max={100}
-    class="fixed top-0 left-0 w-full bg-gray-300 h-2"
+    class="fixed top-0 left-0 w-full bg-secondary h-2"
   />
-  <div class="mt-24 ml-64 flex">
-    <Avatar.Root class="w-80 h-80 mr-20 border-4 border-secondary">
+  <div class="mt-24 mobile:ml-8 md:ml-64 flex mobile:flex-col">
+    <Avatar.Root class="w-80 h-80 mr-20 border-4 border-secondary mobile:mb-16">
       <Avatar.Image src="./profile_photo.jpg" alt="profile photo" />
     </Avatar.Root>
     <div class="flex-col">
-      <div class="flex font-extrabold text-6xl">
+      <div class="flex font-extrabold mobile:text-4xl md:text-6xl">
         Hello!
         <img class="ml-4 pb-3 w-16 h-16" src="./wave.gif" alt="wave gif" />
       </div>
 
-      <div class="w-3/5 mt-8 text-2xl">
+      <div class="mobile:w-4/5 md:w-3/5 mt-8 text-2xl">
         I'm <span class="text-green-500">Ang Zhen Cai</span>, and I'm passionate
         about the latest developments in technology. I'm also a self-proclaimed
         coffee snob, always on the lookout for the perfect cup.
       </div>
-      <div class="flex flex-col w-3/5 mt-8 text-lg">
+      <div class="flex flex-col mobile:w-4/5 md:w-3/5 mt-8 text-lg">
         Feel free to use the links below to reach out to me or check out my
         GitHub to explore some of my personal projects.
         <span class="mt-2"
@@ -78,8 +78,8 @@
     </div>
   </div>
   <Separator class="my-24" />
-  <div class="flex flex-col ml-64">
-    <div class="text-6xl font-extrabold mb-16">About Me 🎓</div>
+  <div class="flex flex-col mobile:ml-8 md:ml-64">
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-16">About Me 🎓</div>
     <div class="text-lg w-4/5">
       I'm a final-year student pursuing a Bachelor of Science with Honours in
       <span class="text-green-500">Computing Science</span>. This three-year
@@ -112,10 +112,10 @@
     </div>
   </div>
   <Separator class="my-24" />
-  <div class="flex flex-col ml-64">
-    <div class="text-6xl font-extrabold mb-8">Skills 🛠️</div>
+  <div class="flex flex-col mobile:ml-8 md:ml-64">
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Skills 🛠️</div>
     <Carousel.Root
-      class="w-3/5"
+      class="mobile:w-4/5 md:w-3/5"
       plugins={[
         Autoplay({
           delay: 3000,
@@ -178,17 +178,17 @@
     </Carousel.Root>
   </div>
   <Separator class="my-24" />
-  <div class="flex flex-col ml-64">
-    <div class="text-6xl font-extrabold mb-8">Professional Experience 💼</div>
+  <div class="flex flex-col mobile:ml-8 md:ml-64">
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Professional Experience 💼</div>
     <div class="flex flex-col mb-4">
       <span class="text-2xl font-extrabold text-green-500 mb-4"
         >ST Engineering</span
       >
-      <div class="flex justify-between w-2/5 text-green-700 mb-4">
+      <div class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4">
         <span>Software Engineer Intern</span>
         <span>Sep 2024 — Present</span>
       </div>
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >Developed several Proof of Concepts (PoCs) utilizing SvelteKit and
         NestJS to explore innovative application solutions. Employed Docker for
         efficient containerization and deployment, streamlining the development
@@ -202,11 +202,11 @@
       <span class="text-2xl font-extrabold text-green-500 mb-4"
         >Keysight Technologies</span
       >
-      <div class="flex justify-between w-2/5 text-green-700 mb-4">
+      <div class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4">
         <span>Software Engineer Intern</span>
         <span>Sep 2019 — Feb 2020</span>
       </div>
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >Developed a software application using C# WPF, integrating a charting
         library to receive live data through REST API calls. The application
         transformed numerical data into dynamic charts that automatically
@@ -217,20 +217,20 @@
     </div>
   </div>
   <Separator class="my-24" />
-  <div class="flex flex-col ml-64">
-    <div class="text-6xl font-extrabold mb-8">Notable Personal Projects 🚀</div>
+  <div class="flex flex-col mobile:ml-8 md:ml-64">
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Notable Personal Projects 🚀</div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/rag-llm-project"
           target="_blank"
           rel="noopener noreferrer">🔗 Simple Finance RAG LLM ChatBot</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >SvelteKit, FastAPI, Transformers, ChromaDB</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >Developed a Retrieval-Augmented Generation (RAG) finance application
         featuring a SvelteKit frontend and a FastAPI backend, with ChromaDB as
         the vector database. This user-friendly chatbot enables seamless
@@ -238,23 +238,23 @@
       </span>
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/llm-project"
           target="_blank"
           rel="noopener noreferrer">🔗 Mental Health Support LLM ChatBot</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >SvelteKit, Flask, Ollama, LangChain, LLM-Guard</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This project is a mental health chatbot created to offer support and
         guidance through the use of dolphin-phi large language models (LLMs). It
         utilizes a blend of robust libraries and frameworks to ensure a
         responsive, secure, and user-friendly experience.</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >We are utilizing dolphin-phi, an uncensored language model (LLM). The
         rationale for selecting this LLM is to demonstrate the effectiveness of
         LLM-Guard, which ensures the chatbot's output adheres to strict content
@@ -266,17 +266,17 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/openlayers-flight-tracker"
           target="_blank"
           rel="noopener noreferrer">🔗 OpenLayers Flight Tracker</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >SvelteKit, NestJS, OpenLayers, OpenSky Network API, Docker</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This project is a containerized web application that displays live
         flight data on a map using OpenLayers for map tiles and the OpenSky
         Network API for real-time flight information. The backend, built with
@@ -284,24 +284,24 @@
         streams it to the frontend using Server-Sent Events (SSE). The frontend,
         built with SvelteKit, visualizes this data on an interactive map.</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This setup allows users to see live flight information seamlessly
         updated on a map, all while being hosted in a containerized environment
         for easy scaling and management.</span
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/sveltekit-nestjs-postgres"
           target="_blank"
           rel="noopener noreferrer">🔗 File Uploader</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >SvelteKit, NestJS, PostgreSQL, Docker</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This file uploader web application is a comprehensive demonstration of
         full-stack web development, seamlessly integrating both front-end and
         back-end components. The backend is powered by RESTful APIs to ensure
@@ -310,7 +310,7 @@
         to manage uploaded files, as well as a search feature to quickly find
         specific records.</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >To further demonstrate modern development practices, the application is
         containerized using Docker, enabling easy deployment and distributed
         computing, making it scalable and versatile across various environments.
@@ -319,17 +319,17 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/multi-class-image-classifier"
           target="_blank"
           rel="noopener noreferrer">🔗 Brain Tumor MRI Image Classifier</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >TensorFlow, MatPlotLib, NumPy, Python</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This project employs TensorFlow Keras to develop a Convolutional Neural
         Network (CNN) model aimed at predicting the presence of tumors in brain
         MRI images. By leveraging advanced image processing techniques and deep
@@ -339,7 +339,7 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline"
+      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/rnn-lstm-trading-project"
           target="_blank"
@@ -347,11 +347,11 @@
           >🔗 Price Movement Prediction with RNN-LSTM</a
         ></span
       >
-      <span class="w-3/5 text-green-700 mb-4"
+      <span class="mobile:w-4/5 md:w-3/5 text-green-700 mb-4"
         >TensorFlow, Scikit-Learn, Pandas, Pandas-TA, NumPy, MatPlotLib, Yahoo
         Finance API, Python</span
       >
-      <span class="mb-2 w-3/5"
+      <span class="mb-2 mobile:w-4/5 md:w-3/5"
         >This project aims to predict financial asset price movements using
         historical data from Yahoo Finance. Leveraging machine learning
         techniques, we use a Recurrent Neural Network (RNN) with Long Short-Term
@@ -366,7 +366,7 @@
   </div>
   <Button 
     on:click={scrollToTop} 
-    class="fixed bottom-16 right-8 bg-green-500 text-primary rounded-full p-8 shadow-lg hover:bg-green-600 transition duration-300"
+    class="fixed bottom-16 right-8 bg-green-500 text-primary rounded-full p-4 shadow-lg hover:bg-green-600 transition duration-300"
     aria-label="Scroll to top"
   >
     ↑
