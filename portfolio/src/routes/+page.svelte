@@ -2,9 +2,16 @@
   import * as Avatar from "$lib/components/ui/avatar/index.js";
   import { Separator } from "$lib/components/ui/separator/index.js";
   import { Progress } from "$lib/components/ui/progress/index.js";
+  import * as Carousel from "$lib/components/ui/carousel/index.js";
+  import Autoplay from "embla-carousel-autoplay";
+  import { Button } from "$lib/components/ui/button";
   import { onMount } from "svelte";
 
   let value = 0;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const updateScrollProgress = () => {
     const scrollTop = window.scrollY;
@@ -107,44 +114,68 @@
   <Separator class="my-24" />
   <div class="flex flex-col ml-64">
     <div class="text-6xl font-extrabold mb-8">Skills 🛠️</div>
-    <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4">Languages</span>
-      <span class="mb-2">+ TypeScript</span>
-      <span class="mb-2">+ JavaScript</span>
-      <span class="mb-2">+ HTML / CSS</span>
-      <span class="mb-2">+ Python</span>
-      <span class="mb-2">+ Java</span>
-      <span class="mb-2">+ C#</span>
-      <span class="mb-2">+ SQL</span>
-    </div>
-    <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4">Frameworks</span
-      >
-      <span class="mb-2">+ SvelteKit</span>
-      <span class="mb-2">+ React</span>
-      <span class="mb-2">+ NestJS</span>
-      <span class="mb-2">+ Express</span>
-      <span class="mb-2">+ FastAPI</span>
-      <span class="mb-2">+ Flask</span>
-      <span class="mb-2">+ Transformers</span>
-      <span class="mb-2">+ TensorFlow</span>
-      <span class="mb-2">+ PyTorch</span>
-      <span class="mb-2">+ ChromaDB</span>
-    </div>
-    <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4"
-        >Distributed Computing</span
-      >
-      <span class="mb-2">+ Docker</span>
-      <span class="mb-2">+ Kubernetes</span>
-    </div>
-    <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4">Tools</span>
-      <span class="mb-2">+ GitHub</span>
-      <span class="mb-2">+ Turborepo</span>
-      <span class="mb-2">+ Ollama</span>
-      <span class="mb-2">+ HuggingFace</span>
-    </div>
+    <Carousel.Root
+      class="w-3/5"
+      plugins={[
+        Autoplay({
+          delay: 3000,
+        }),
+      ]}
+    >
+      <Carousel.Content>
+        <Carousel.Item>
+          <div class="flex flex-col mb-4">
+            <span class="text-2xl font-extrabold text-green-500 mb-4"
+              >Languages</span
+            >
+            <span class="mb-2">+ TypeScript</span>
+            <span class="mb-2">+ JavaScript</span>
+            <span class="mb-2">+ HTML / CSS</span>
+            <span class="mb-2">+ Python</span>
+            <span class="mb-2">+ Java</span>
+            <span class="mb-2">+ C#</span>
+            <span class="mb-2">+ SQL</span>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div class="flex flex-col mb-4">
+            <span class="text-2xl font-extrabold text-green-500 mb-4"
+              >Frameworks</span
+            >
+            <span class="mb-2">+ SvelteKit</span>
+            <span class="mb-2">+ React</span>
+            <span class="mb-2">+ NestJS</span>
+            <span class="mb-2">+ Express</span>
+            <span class="mb-2">+ FastAPI</span>
+            <span class="mb-2">+ Flask</span>
+            <span class="mb-2">+ Transformers</span>
+            <span class="mb-2">+ TensorFlow</span>
+            <span class="mb-2">+ PyTorch</span>
+            <span class="mb-2">+ ChromaDB</span>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div class="flex flex-col mb-4">
+            <span class="text-2xl font-extrabold text-green-500 mb-4"
+              >Distributed Computing</span
+            >
+            <span class="mb-2">+ Docker</span>
+            <span class="mb-2">+ Kubernetes</span>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div class="flex flex-col mb-4">
+            <span class="text-2xl font-extrabold text-green-500 mb-4"
+              >Tools</span
+            >
+            <span class="mb-2">+ GitHub</span>
+            <span class="mb-2">+ Turborepo</span>
+            <span class="mb-2">+ Ollama</span>
+            <span class="mb-2">+ HuggingFace</span>
+          </div>
+        </Carousel.Item>
+      </Carousel.Content>
+    </Carousel.Root>
   </div>
   <Separator class="my-24" />
   <div class="flex flex-col ml-64">
@@ -333,6 +364,13 @@
       >
     </div>
   </div>
+  <Button 
+    on:click={scrollToTop} 
+    class="fixed bottom-16 right-8 bg-green-500 text-primary rounded-full p-8 shadow-lg hover:bg-green-600 transition duration-300"
+    aria-label="Scroll to top"
+  >
+    ↑
+  </Button>
   <!-- Footer Section -->
   <div
     class="fixed bottom-0 left-0 w-full bg-gradient-to-r from-green-400 to-green-700 text-center py-4 marquee"
