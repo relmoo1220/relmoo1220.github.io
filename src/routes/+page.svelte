@@ -3,14 +3,28 @@
   import { Separator } from "$lib/components/ui/separator/index.js";
   import { Progress } from "$lib/components/ui/progress/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
+  import type { CarouselAPI } from "$lib/components/ui/carousel/context.js";
   import Autoplay from "embla-carousel-autoplay";
   import { Button } from "$lib/components/ui/button";
   import { onMount } from "svelte";
 
+  let api: CarouselAPI;
+  let current = 0;
+  let count = 0;
+
+  $: if (api) {
+    count = api.scrollSnapList().length;
+    current = api.selectedScrollSnap() + 1;
+
+    api.on("select", () => {
+      current = api.selectedScrollSnap() + 1;
+    });
+  }
+
   let value = 0;
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const updateScrollProgress = () => {
@@ -34,16 +48,16 @@
   <Progress
     {value}
     max={100}
-    class="fixed top-0 left-0 w-full bg-secondary h-2"
+    class="fixed top-0 left-0 w-full bg-secondary h-2 rounded-none"
   />
   <div class="mt-24 mobile:ml-8 md:ml-64 flex mobile:flex-col">
     <Avatar.Root class="w-80 h-80 mr-20 border-4 border-secondary mobile:mb-16">
       <Avatar.Image src="./profile_photo.jpg" alt="profile photo" />
     </Avatar.Root>
     <div class="flex-col">
-      <div class="flex font-extrabold mobile:text-4xl md:text-6xl">
+      <div class="flex font-extrabold mobile:text-4xl md:text-6xl items-center">
         Hello!
-        <img class="ml-4 pb-3 w-16 h-16" src="./wave.gif" alt="wave gif" />
+        <img class="mobile:mb-8 md:mb-4 ml-4 w-16 h-16" src="./wave.gif" alt="wave gif" />
       </div>
 
       <div class="mobile:w-4/5 md:w-3/5 mt-8 text-2xl">
@@ -79,7 +93,9 @@
   </div>
   <Separator class="my-24" />
   <div class="flex flex-col mobile:ml-8 md:ml-64">
-    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-16">About Me 🎓</div>
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-16">
+      About Me 🎓
+    </div>
     <div class="text-lg w-4/5">
       I'm a final-year student pursuing a Bachelor of Science with Honours in
       <span class="text-green-500">Computing Science</span>. This three-year
@@ -116,6 +132,7 @@
     <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Skills 🛠️</div>
     <Carousel.Root
       class="mobile:w-4/5 md:w-3/5"
+      bind:api
       plugins={[
         Autoplay({
           delay: 3000,
@@ -176,15 +193,22 @@
         </Carousel.Item>
       </Carousel.Content>
     </Carousel.Root>
+    <div class="text-green-500 py-2 text-start">
+      Slide {current} of {count}
+    </div>
   </div>
   <Separator class="my-24" />
   <div class="flex flex-col mobile:ml-8 md:ml-64">
-    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Professional Experience 💼</div>
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">
+      Professional Experience 💼
+    </div>
     <div class="flex flex-col mb-4">
       <span class="text-2xl font-extrabold text-green-500 mb-4"
         >ST Engineering</span
       >
-      <div class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4">
+      <div
+        class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4"
+      >
         <span>Software Engineer Intern</span>
         <span>Sep 2024 — Present</span>
       </div>
@@ -202,7 +226,9 @@
       <span class="text-2xl font-extrabold text-green-500 mb-4"
         >Keysight Technologies</span
       >
-      <div class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4">
+      <div
+        class="flex mobile:flex-col justify-between mobile:w-4/5 md:w-2/5 text-green-700 mb-4"
+      >
         <span>Software Engineer Intern</span>
         <span>Sep 2019 — Feb 2020</span>
       </div>
@@ -218,9 +244,12 @@
   </div>
   <Separator class="my-24" />
   <div class="flex flex-col mobile:ml-8 md:ml-64">
-    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">Notable Personal Projects 🚀</div>
+    <div class="mobile:text-4xl md:text-6xl font-extrabold mb-8">
+      Notable Personal Projects 🚀
+    </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/rag-llm-project"
           target="_blank"
@@ -238,7 +267,8 @@
       </span>
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/llm-project"
           target="_blank"
@@ -266,7 +296,8 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/openlayers-flight-tracker"
           target="_blank"
@@ -291,7 +322,8 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/sveltekit-nestjs-postgres"
           target="_blank"
@@ -319,7 +351,8 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/multi-class-image-classifier"
           target="_blank"
@@ -339,7 +372,8 @@
       >
     </div>
     <div class="flex flex-col mb-4">
-      <span class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
+      <span
+        class="text-2xl font-extrabold text-green-500 mb-4 underline mobile:w-4/5"
         ><a
           href="https://github.com/relmoo1220/rnn-lstm-trading-project"
           target="_blank"
@@ -364,12 +398,12 @@
       >
     </div>
   </div>
-  <Button 
-    on:click={scrollToTop} 
+  <Button
+    on:click={scrollToTop}
     class="fixed bottom-16 right-8 bg-green-500 text-primary rounded-full p-4 shadow-lg hover:bg-green-600 transition duration-300"
     aria-label="Scroll to top"
   >
-    ↑
+    ☝️
   </Button>
   <!-- Footer Section -->
   <div
