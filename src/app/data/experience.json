@@ -1,0 +1,35 @@
+[
+  {
+    "company": "ST Engineering",
+    "role": "Full Stack Software Engineer",
+    "startDate": "Jun 2025",
+    "endDate": "Mar 2026",
+    "description": [
+      "Evolved the Flight Information Display System (FIDS) from a Proof of Concept into a production-ready solution, successfully deployed at Maasin Airport (Philippines).",
+      "Integrated with the Airport Operations Database (AODB) for event-driven updates, enabling flight data changes to automatically propagate to display screens in real time.",
+      "Strengthened skills in designing scalable, configurable, and operational systems, turning innovative concepts into live, user-facing solutions."
+    ]
+  },
+  {
+    "company": "ST Engineering",
+    "role": "Full Stack Software Engineer Intern",
+    "startDate": "Sep 2024",
+    "endDate": "Apr 2025",
+    "description": [
+      "Developed two major Proof of Concepts (PoCs) focused on configurable interfaces and interactive flight data visualization.",
+      "Built a low-code Flight Information Display System (FIDS) with a drag-and-drop editor, allowing users to design custom screen layouts with components such as flight tables, gate displays, belt information, check-in counters, media widgets, etc. Configurations could be deployed directly to edge devices for real-time display.",
+      "Created a flight-tracking visualization showing aircraft movement and historical flight trails, providing an interactive way to explore live and past flight activity.",
+      "Gained experience in user-focused interface design, data visualization, and building configurable systems for real-world deployments."
+    ]
+  },
+  {
+    "company": "Keysight Technologies",
+    "role": "Software Engineer Intern",
+    "startDate": "Sep 2019",
+    "endDate": "Feb 2020",
+    "description": [
+      "Developed a C# WPF dashboard application to visualize real-time telemetry data with the use of charting libraries.",
+      "Applied the Model-View-ViewModel (MVVM) architectural pattern."
+    ]
+  }
+]

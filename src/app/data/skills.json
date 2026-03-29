@@ -1,0 +1,108 @@
+{
+  "languages": [
+    {
+      "name": "TypeScript",
+      "icon": "/icons/typescript.svg"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "/icons/javascript.svg"
+    },
+    {
+      "name": "Python",
+      "icon": "/icons/python.svg"
+    },
+    {
+      "name": "Java",
+      "icon": "/icons/java.svg"
+    },
+    {
+      "name": "C#",
+      "icon": "/icons/csharp.svg"
+    },
+    {
+      "name": "HTML",
+      "icon": "/icons/html.svg"
+    },
+    {
+      "name": "CSS",
+      "icon": "/icons/css.svg"
+    }
+  ],
+  "frameworks": [
+    {
+      "name": "Next.js",
+      "icon": "/icons/nextjs.svg"
+    },
+    {
+      "name": "React",
+      "icon": "/icons/react.svg"
+    },
+    {
+      "name": "SvelteKit",
+      "icon": "/icons/sveltekit.svg"
+    },
+    {
+      "name": "Nest.js",
+      "icon": "/icons/nestjs.svg"
+    },
+    {
+      "name": "Express.js",
+      "icon": "/icons/expressjs.svg"
+    },
+    {
+      "name": "Node.js",
+      "icon": "/icons/nodejs.svg"
+    },
+    {
+      "name": "FastAPI",
+      "icon": "/icons/fastapi.svg"
+    },
+    {
+      "name": "Flask",
+      "icon": "/icons/flask.svg"
+    },
+    {
+      "name": "TailwindCSS",
+      "icon": "/icons/tailwindcss.svg"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Docker",
+      "icon": "/icons/docker.svg"
+    },
+    {
+      "name": "Kubernetes",
+      "icon": "/icons/kubernetes.svg"
+    },
+    {
+      "name": "RabbitMQ",
+      "icon": "/icons/rabbitmq.svg"
+    },
+    {
+      "name": "Kafka",
+      "icon": "/icons/kafka.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "/icons/postgresql.svg"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "/icons/mongodb.svg"
+    },
+    {
+      "name": "OpenTelemetry",
+      "icon": "/icons/opentelemetry.svg"
+    },
+    {
+      "name": "Grafana",
+      "icon": "/icons/grafana.svg"
+    },
+    {
+      "name": "Ansible",
+      "icon": "/icons/ansible.svg"
+    }
+  ]
+}
