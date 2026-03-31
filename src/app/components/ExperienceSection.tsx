@@ -31,6 +31,24 @@ export default function ExperienceSection() {
                 </div>
               ))}
             </div>
+            <div className="flex flex-col gap-2">
+              <div className="text-amber-600 font-semibold">Tech Stack:</div>
+              <div className="flex w-full space-x-2">
+                {exp.techStack.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center space-x-2 border-2 border-amber-600 bg-amber-100 p-2 rounded-xl"
+                  >
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-6 h-6"
+                    />
+                    <span className="text-amber-700">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>

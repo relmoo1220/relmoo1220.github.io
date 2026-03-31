@@ -4,6 +4,40 @@
     "role": "Full Stack Software Engineer",
     "startDate": "Jun 2025",
     "endDate": "Mar 2026",
+    "techStack": [
+      {
+        "name": "SvelteKit",
+        "icon": "/icons/sveltekit.svg"
+      },
+      {
+        "name": "Nest.js",
+        "icon": "/icons/nestjs.svg"
+      },
+      {
+        "name": "Node.js",
+        "icon": "/icons/nodejs.svg"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "/icons/postgresql.svg"
+      },
+      {
+        "name": "RabbitMQ",
+        "icon": "/icons/rabbitmq.svg"
+      },
+      {
+        "name": "Grafana",
+        "icon": "/icons/grafana.svg"
+      },
+      {
+        "name": "OpenTelemtry",
+        "icon": "/icons/opentelemetry.svg"
+      },
+      {
+        "name": "Ansible",
+        "icon": "/icons/ansible.svg"
+      }
+    ],
     "description": [
       "Evolved the Flight Information Display System (FIDS) from a Proof of Concept into a production-ready solution, successfully deployed at Maasin Airport (Philippines).",
       "Integrated with the Airport Operations Database (AODB) for event-driven updates, enabling flight data changes to automatically propagate to display screens in real time.",
@@ -15,6 +49,24 @@
     "role": "Full Stack Software Engineer Intern",
     "startDate": "Sep 2024",
     "endDate": "Apr 2025",
+    "techStack": [
+      {
+        "name": "SvelteKit",
+        "icon": "/icons/sveltekit.svg"
+      },
+      {
+        "name": "Nest.js",
+        "icon": "/icons/nestjs.svg"
+      },
+      {
+        "name": "Node.js",
+        "icon": "/icons/nodejs.svg"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "/icons/postgresql.svg"
+      }
+    ],
     "description": [
       "Developed two major Proof of Concepts (PoCs) focused on configurable interfaces and interactive flight data visualization.",
       "Built a low-code Flight Information Display System (FIDS) with a drag-and-drop editor, allowing users to design custom screen layouts with components such as flight tables, gate displays, belt information, check-in counters, media widgets, etc. Configurations could be deployed directly to edge devices for real-time display.",
@@ -27,6 +79,7 @@
     "role": "Software Engineer Intern",
     "startDate": "Sep 2019",
     "endDate": "Feb 2020",
+    "techStack": [{ "name": "C#", "icon": "/icons/csharp.svg" }],
     "description": [
       "Developed a C# WPF dashboard application to visualize real-time telemetry data with the use of charting libraries.",
       "Applied the Model-View-ViewModel (MVVM) architectural pattern."
