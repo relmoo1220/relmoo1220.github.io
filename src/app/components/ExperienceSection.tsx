@@ -33,7 +33,7 @@ export default function ExperienceSection() {
             </div>
             <div className="flex flex-col gap-2">
               <div className="text-amber-600 font-semibold">Tech Stack:</div>
-              <div className="flex w-full space-x-2">
+              <div className="flex flex-wrap w-full gap-2">
                 {exp.techStack.map((skill) => (
                   <div
                     key={skill.name}
