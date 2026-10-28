@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import {
+  IconArrowRight,
   IconBrandGithub,
   IconBrandLinkedin,
   IconMail,
@@ -78,6 +80,13 @@ export default function IntroSection() {
             </span>
           </a>
         ))}
+        <Link
+          href="/projects"
+          className="flex items-center gap-2 border border-red-600 bg-red-600 px-3 py-2 font-mono text-sm text-white transition-colors duration-200 hover:bg-red-500"
+        >
+          view projects
+          <IconArrowRight size={18} />
+        </Link>
       </div>
     </div>
   );

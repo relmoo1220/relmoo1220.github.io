@@ -1,5 +1,10 @@
-import EmptyState from "@/app/components/EmptyState";
+import PageShell from "@/app/components/PageShell";
+import ProjectsSection from "@/app/components/ProjectsSection";
 
 export default function Projects() {
-  return <EmptyState title="Projects" />;
+  return (
+    <PageShell>
+      <ProjectsSection />
+    </PageShell>
+  );
 }

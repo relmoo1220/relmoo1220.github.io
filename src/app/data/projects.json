@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Authentication System",
+    "summary": "A full-stack login system with an ASP.NET Core backend and an Angular frontend, built around production security decisions.",
+    "flow": [["Angular"], ["ASP.NET Core"], ["Redis (rate limiter)"], ["PostgreSQL"]],
+    "highlights": [
+      { "lead": "HttpOnly cookies", "text": "hold the JWT access and refresh tokens instead of localStorage, so scripts cannot steal them." },
+      { "lead": "Redis + Lua", "text": "token-bucket rate limiting that holds across instances without window-boundary spikes." },
+      { "lead": "Observability", "text": "Serilog structured logs, plus health checks for the database and cache." }
+    ],
+    "tags": ["ASP.NET Core", "Angular", "PostgreSQL", "Redis", "Docker"],
+    "href": "https://github.com/relmoo1220/dotnet-auth-system"
+  },
+  {
+    "title": "LGTM Observability Stack",
+    "summary": "Logs, traces and metrics from a NestJS service flowing through OpenTelemetry into Grafana.",
+    "flow": [["NestJS app"], ["OTel Collector"], ["Loki", "Tempo", "Mimir"], ["Grafana"]],
+    "highlights": [
+      { "lead": "OpenTelemetry Collector", "text": "receives, processes and routes all telemetry over OTLP." },
+      { "lead": "One Grafana", "text": "to explore Loki logs, Tempo traces and Mimir metrics together." },
+      { "lead": "Instrumented app", "text": "NestJS with auto-instrumentation and structured pino logging, everything in Docker." }
+    ],
+    "tags": ["Grafana", "OpenTelemetry", "NestJS", "Docker"],
+    "href": "https://github.com/relmoo1220/lgtm-stack"
+  },
+  {
+    "title": "Live Flight Tracker",
+    "summary": "Live flights on an interactive map.",
+    "flow": [["OpenSky API"], ["NestJS"], ["SvelteKit + OpenLayers"]],
+    "highlights": [
+      { "lead": "Server-Sent Events", "text": "stream live OpenSky data from NestJS to the browser." },
+      { "lead": "OpenLayers", "text": "renders aircraft on an interactive map in SvelteKit." },
+      { "lead": "Docker", "text": "for both frontend and backend, for easy deployment." }
+    ],
+    "tags": ["SvelteKit", "NestJS", "OpenLayers", "Docker"],
+    "href": "https://github.com/relmoo1220/openlayers-flight-tracker"
+  },
+  {
+    "title": "Rust Systems Projects",
+    "summary": "Three from-scratch Rust projects covering networking, concurrency and command-line tooling.",
+    "highlights": [
+      {
+        "lead": "rust-api-gateway",
+        "text": "Axum and Tokio, per-key token-bucket rate limiting, YAML-defined routes.",
+        "href": "https://github.com/relmoo1220/rust-api-gateway"
+      },
+      {
+        "lead": "rust-http-server",
+        "text": "multi-threaded HTTP/1.1 with a hand-built thread pool and graceful shutdown.",
+        "href": "https://github.com/relmoo1220/rust-http-server"
+      },
+      {
+        "lead": "rust-grep",
+        "text": "grep-style CLI with recursive and case-insensitive search.",
+        "href": "https://github.com/relmoo1220/rust-grep"
+      }
+    ],
+    "tags": ["Rust", "Axum", "Tokio"]
+  }
+]
